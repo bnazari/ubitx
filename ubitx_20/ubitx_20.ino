@@ -75,7 +75,7 @@
 #define SECOND_OSC_USB (56995000l)
 #define SECOND_OSC_LSB (32995000l) 
 //these are the two default USB and LSB frequencies. The best frequencies depend upon your individual taste and filter shape
-#define INIT_USB_FREQ   (11996500l)
+#define INIT_USB_FREQ   (11059200l)
 // limits the tuning and working range of the ubitx between 3 MHz and 30 MHz
 #define LOWEST_FREQ  (3000000l)
 #define HIGHEST_FREQ (30000000l)
@@ -356,13 +356,13 @@ void setTXFilters(unsigned long freq){
     digitalWrite(TX_LPF_C, 0);
   }
   else if (freq > 7000000L){
-    digitalWrite(TX_LPF_A, 1);
+    digitalWrite(TX_LPF_A, 0);
     digitalWrite(TX_LPF_B, 1);
     digitalWrite(TX_LPF_C, 0);    
   }
   else {
-    digitalWrite(TX_LPF_A, 1);
-    digitalWrite(TX_LPF_B, 1);
+    digitalWrite(TX_LPF_A, 0);
+    digitalWrite(TX_LPF_B, 0);
     digitalWrite(TX_LPF_C, 1);    
   }
 
